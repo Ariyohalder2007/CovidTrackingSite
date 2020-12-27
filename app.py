@@ -4,7 +4,6 @@ import requests
 
 covid19 = COVID19Py.COVID19()
 latest = covid19.getLatest()
-latest = dict(latest)
 
 
 res_loc = requests.get('https://ipinfo.io/')
@@ -62,6 +61,7 @@ def mapPage():
     user_coor = user_coor.split(',')
     params={"user_coor":user_coor}
     return render_template('map.html', params=params)
+
     
 
 app.run(debug=True)
